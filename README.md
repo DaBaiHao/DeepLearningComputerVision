@@ -41,7 +41,7 @@ This method extend the network to cope with three color channels simultaneously,
 - appealing properties
   1. its structure is intentionally designed with simplicity in mind and yet provides superior accuracy compared with state-of-the-art example-based methods(  Figure 1 shows a comparison on an example.)
   2. with moderate numbers of filters and layers, our method achieves fast speed for practical on-line usage even on a CPU.(faster than a number of example-based methods because it is fully feed-forward and does not need to solve any optimization problem on usage)
-  3.  experiments show that the restoration quality of the network can be further improved when (i) larger and more diverse datasets are available, and/or (ii) a larger and deeper model is used. (On the contrary, larger datasets/models can present challenges for existing example-based methods. Furthermore, the proposed network can cope with three channels of color images simultaneously to achieve improved super-resolution performance)
+  3.  experiments show that the restoration quality of the network can be further improved when (i) larger and more diverse datasets are available, and/or (ii) a larger and deeper model is used. (######### On the contrary, larger datasets/models can present challenges for existing example-based methods. Furthermore, the proposed network can cope with three channels of color images simultaneously to achieve improved super-resolution performance########)
   
 3. The contributions of this study
   1. present a fully convolutional neural network for image super-resolution. The network directly learns an end-to-end mapping between lowand high-resolution images, **with little pre/postprocessing beyond the optimization**
