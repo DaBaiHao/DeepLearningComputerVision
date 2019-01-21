@@ -15,11 +15,14 @@ This report extend the network to cope with three color channels simultaneously,
 ## From INTRODUCTION
 
 1. image super-resolution (SR) : aims at recovering a high-resolution image from a single lowresolution image
-  - prior soluation: example-based strategy
-    - exploit internal similarities of the same image
-    - learn mapping functions from external low- and high-resolution exemplar pairs
-  
-
+ - prior soluation: example-based strategy
+    - ideas of prior soluation: example-based strategy methods
+       - exploit internal similarities of the same image
+       - learn mapping functions from external low- and high-resolution exemplar pairs
+    - example-based strategy can formulated in
+      - generic image super-resolution, 
+      - can be designed to suit domain specific tasks, i.e., face hallucination
+ 
 
 
 
