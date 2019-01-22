@@ -60,8 +60,23 @@ This method extend the network to cope with three color channels simultaneously,
 
 1. Formulation
   1. Only pre-processing: upscale low-resolution image to the desired size(method: using bicubic interpolation)
-  2. 
+  2. wish to learn a mapping F(from "low-resolution" image to high-resolution image), conceptually consists of three operations
+      1. Patch extraction and representation：该操作从低分辨率图像Y中提取（重叠）块，并将每个块表示为高维矢量。 这些向量包括一组特征图，其数量等于向量的维数。
+      2. this operation nonlinearly maps each high-dimensional vector onto another high-dimensional vector. comprise another set of feature maps
+      3. Reconstruction: this operation aggregates the above high-resolution patch-wise representations to generate the final high-resolution image.
   
+  
+  3.1.1 Patch extraction and representation
+  3.1.2 Non-linear mapping
+  3.1.3 Reconstruction
+  3.2 Relationship to Sparse-Coding-Based Methods
+  Not read
+  
+##  3.3 Training
+1. Given a set of high-resolution images {Xi} and their corresponding low-resolution images {Yi}, we use **Mean Squared Error (MSE)** as the loss function.(reason of using MSE:  Using MSE as the loss function favors a high PSNR. The PSNR is a widely-used metric for quantitatively evaluating image restoration quality, and is at least partially related to the perceptual quality. )
+2. 
+
+ 
   
   
   
