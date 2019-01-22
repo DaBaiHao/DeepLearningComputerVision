@@ -73,11 +73,14 @@ This method extend the network to cope with three color channels simultaneously,
   Not read
   
 ##  3.3 Training
-1. Given a set of high-resolution images {Xi} and their corresponding low-resolution images {Yi}, we use **Mean Squared Error (MSE)** as the loss function.(reason of using MSE:  Using MSE as the loss function favors a high PSNR. The PSNR is a widely-used metric for quantitatively evaluating image restoration quality, and is at least partially related to the perceptual quality. )
-2. 
+1. Given a set of high-resolution images {Xi} and their corresponding low-resolution images {Yi}, we use **Mean Squared Error (MSE)** as the loss function.(reason of using MSE:  Using MSE as the loss function favors a high PSNR. The PSNR is a widely-used metric for quantitatively evaluating image restoration quality, and is at least partially related to the perceptual quality. ) it is flexible for the network to adapt to that metric(difficult to achieve for traditional “handcrafted” methods. Despite that the proposed model is trained favoring a high PSNR, we still observe satisfactory performance when the model is evaluated using alternative evaluation metrics, e.g., SSIM, MSSIM 如果在培训期间给出了更好的感知动机度量，则网络可以灵活地适应该度量。 相反，传统的“手工”方法通常很难实现这种灵活性。 尽管所提出的模型训练有利于高PSNR，但是当使用替代评估指标（例如SSIM，MSSIM）评估模型时，我们仍然观察到令人满意的性能。)
+2. The loss is minimized using **stochastic gradient descent** with the **standard backpropagation**
+3. To avoid border effects during training: all the convolutional layers have no padding, and the network produces a smaller output
+4. **BUILD THE low-resolution samples:** To synthesize the low-resolution samples {Yi}, we blur a sub-image by a Gaussian kernel, sub-sample it by the upscaling factor, and upscale it by the same factor via bicubic interpolation
+5. Although  fixed image size in training, the convolutional neural network can be applied on images of arbitrary sizes during testing
 
- 
-  
+ 4 EXPERIMENTS
+ Not read
   
   
   
