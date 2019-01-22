@@ -57,7 +57,10 @@ This method extend the network to cope with three color channels simultaneously,
   
   
 ##  From CONVOLUTIONAL NEURAL NETWORKS FOR SUPER-RESOLUTION
-  
+
+1. Formulation
+  1. Only pre-processing: upscale low-resolution image to the desired size(method: using bicubic interpolation)
+  2. 
   
   
   
