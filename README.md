@@ -86,7 +86,11 @@ This method extend the network to cope with three color channels simultaneously,
   
   
   
-  
-  
+ ## from the course 
+ 
+ #### super resolution for: detail show the picture, smoothly
+ #### importance:
+ #### challenge:
+ #### model design: Two conv layers  
   
   
