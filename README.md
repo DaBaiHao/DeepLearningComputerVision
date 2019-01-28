@@ -94,3 +94,16 @@ This method extend the network to cope with three color channels simultaneously,
  #### model design: Two conv layers  
   
   
+  
+  
+  
+  
+There are two data set before choosing the EXPERIMENTS training data. The Small data set which contains 91 images and this be decomposed into 24,800 sub-images, with a stride of 14 as one of the data set.  
+Another data set contains 395,909 images from the ILSVRC 2013 ImageNet detection training partition. 
+
+Acording to the graph shows that the  ImageNet data set which is the large one achieves better performance which 0.13db higher than the smaller one. It shows that Training on large dataset does not lead to major improvements
+ However, the Default training set in experiment is the ImageNet, which contains more diverse data and have better performance in trainning.
+
+
+
+In EXPERIMENTS, this report make trades off between the speed and Accuracy based on Filter number, Filter size and Number of layers. 
