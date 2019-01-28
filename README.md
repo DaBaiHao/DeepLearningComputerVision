@@ -107,3 +107,6 @@ Acording to the graph shows that the  ImageNet data set which is the large one a
 
 
 In EXPERIMENTS, this report make trades off between the speed and Accuracy based on Filter number, Filter size and Number of layers. 
+In general the performance would improve if increase the network width, at the cost of running time. To increase the network width, the method in this report is to adding more filters. From the table shows that Performance could be achieved by increasing filter width at the expense of restoration speed
+
+Increasing filter size leads to better results, to be consistent with sparse-coding-based methods, the second layer filter size is fixed as 1. And enlarge the other layer. Which obseverd that 11-1-7 obtained better results than 9-1-5. That because the larger filter size grasp richer structural information and lead better result. And the report also fixed the other two layers filter size and change the second layers filter size. From the graph shows that filter size could significantly improve the performance.
