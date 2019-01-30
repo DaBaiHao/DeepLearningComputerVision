@@ -124,4 +124,8 @@ Let's make a comparison between state-of-the-art based and SRCNN on time and per
 
 # Number of layers more things
 
-
+SRCNN is a Fully optimized model  and inspired on sparse coding methods with superior accuracy than state-of-the-art techniques
+SRCNN is Lightweight method highly suitable for online reconstruction applications
+Super-resolution performance can be further improved by experimenting with network filters and training methodologies.
+ The limition of srcnn is that WHen merging it might have Border effect because it is a sub-image based method. It might not be optimal in pre-processing step. MSE as loss function is not a good measure
+This is the end of our pre. Thank you for this days preparing on each part of this pre. Thank you for listening. 
