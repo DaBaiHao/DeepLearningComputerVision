@@ -1,13 +1,15 @@
+#%%
 import time
 import os
 import matplotlib.pyplot as plt
+
 
 import numpy as np
 import tensorflow as tf
 import scipy
 import pdb
 
-
+#%%
 def imread(path, is_grayscale=True):
   """
   Read image using its path.
