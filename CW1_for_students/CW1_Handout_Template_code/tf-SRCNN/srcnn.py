@@ -80,9 +80,9 @@ inputs = tf.placeholder(tf.float32, [None, input_size, input_size, c_dim], name=
 # conv2 layer with biases and relu: 32 filters with size 1 x 1
 # conv3 layer with biases and NO relu: 1 filter with size 5 x 5
 weights = {
-    'w1': tf.Variable(tf.random_normal([0, 0, 0, 0], stddev=1e-3), name='w1'),
-    'w2': tf.Variable(tf.random_normal([0, 0, 0, 0], stddev=1e-3), name='w2'),
-    'w3': tf.Variable(tf.random_normal([0, 0, 0, 0], stddev=1e-3), name='w3')
+    'w1': tf.Variable(tf.random_normal([9, 9, 1, 64], stddev=1e-3), name='w1'),
+    'w2': tf.Variable(tf.random_normal([1, 1, 64, 32], stddev=1e-3), name='w2'),
+    'w3': tf.Variable(tf.random_normal([5, 5, 32, 1], stddev=1e-3), name='w3')
     }
 
 biases = {
@@ -97,14 +97,15 @@ biases = {
 # replace 'None' with your layers: use the tf.nn.conv2d() and tf.nn.relu()
 # conv1 layer with biases and relu : 64 filters with size 9 x 9
 
-conv1 = None
+conv1 = tf.nn.relu(tf.nn.conv2d(inputs, weights['w1'], strides=[1, 1, 1, 1], padding='VALID') + biases['b1'])
+
 ##------ Add your code here: to compute non-linear mapping
 # conv2 layer with biases and relu: 32 filters with size 1 x 1
 
-conv2 = None
+conv2 = tf.nn.relu(tf.nn.conv2d(conv1, weights['w2'], strides=[1, 1, 1, 1], padding='VALID') + biases['b2'])
 ##------ Add your code here: compute the reconstruction of high-resolution image
 # conv3 layer with biases and NO relu: 1 filter with size 5 x 5
-conv3 = None
+conv3 = tf.nn.conv2d(conv2, weights['w3'], strides=[1, 1, 1, 1], padding='VALID') + biases['b3']
 
 
 """Load the pre-trained model file
@@ -114,7 +115,48 @@ model = np.load(model_path, encoding='latin1').item()
 
 ##------ Add your code here: show the weights of model and try to visualisa
 # variabiles (w1, w2, w3)
+# weight
+conv1_w = model['w1']
+conv2_w = model['w2']
+conv3_w = model['w3']
 
+# bias
+conv1_b = model['b1']
+conv2_b = model['b2']
+conv3_b = model['b3']
+
+# conv1 layer with biases: 64 filters with size 9 x 9
+num_filters_conv1 = len(conv1_b)
+size_filters_conv1 = len(conv1_w)
+
+# conv2 layer with biases and relu: 32 filters with size 1 x 1
+num_filters_conv2 = len(conv2_b)
+size_filters_conv2 = len(conv2_w)
+
+# conv3 layer with biases and NO relu: 1 filter with size 5 x 5
+num_filters_conv3 = len(conv3_b)
+size_filters_conv3 = len(conv3_w)
+
+# To show the value	of the 1st filter
+print('The 1st filter in first convolutional layer is %.2f')
+print(conv1_w[0])
+# To show the bias of the 10th filter
+print('The 10th bias in first convolutional layer is ')
+print(conv1_b[9])
+
+# To show the value	of the 5st filter
+print('The 1st filter in first convolutional layer is ')
+print(conv2_w[0])
+# To show the bias of the 6th filter
+print('The 10th bias in first convolutional layer is ')
+print(conv2_b[0])
+
+# To show the value	of the 1st filter
+print('The 1st filter in first convolutional layer is ')
+print(conv2_w[0])
+# To show the bias of the 1th filter
+print('The 10th bias in first convolutional layer is ')
+print(conv2_b[0])
 
 
 """Initialize the model variabiles (w1, w2, w3, b1, b2, b3) with the pre-trained model file
