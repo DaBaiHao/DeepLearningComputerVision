@@ -182,7 +182,19 @@ input_ = np.expand_dims(np.expand_dims(blurred_image, axis =0), axis=-1)
 # run the session
 # here you can also run to get feature map like 'conv1' and 'conv2'
 ouput_ = sess.run(conv3, feed_dict={inputs: input_})
+ouput_ = ouput_.squeeze()
+import cv2
+ouput_ = cv2.resize(ouput_, dsize=(255, 255), interpolation=cv2.INTER_CUBIC)
+
 
 ##------ Add your code here: save the blurred and SR images and compute the psnr
 # hints: use the 'scipy.misc.imsave()'  and ' skimage.meause.compare_psnr()'
+scipy.misc.imsave('blurred_image.jpg', blurred_image)
+scipy.misc.imsave('SR_image.jpg', ouput_)
+
+import skimage.measure as sk
+psnr_ = sk.compare_psnr(groudtruth_image, ouput_)
+print(psnr_)
+
+
 
