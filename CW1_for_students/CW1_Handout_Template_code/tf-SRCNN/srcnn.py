@@ -97,21 +97,21 @@ biases = {
 # replace 'None' with your layers: use the tf.nn.conv2d() and tf.nn.relu()
 # conv1 layer with biases and relu : 64 filters with size 9 x 9
 
-conv1 = tf.nn.conv2d(inputs, weights['w1'], strides=[1, 1, 1, 1], padding='VALID')
+conv1 = tf.nn.conv2d(inputs, weights['w1'], strides=[1, 1, 1, 1], padding='SAME')
 conv1 = tf.nn.bias_add(conv1, biases['b1'])
 conv1 = tf.nn.relu(conv1)
 
 ##------ Add your code here: to compute non-linear mapping
 # conv2 layer with biases and relu: 32 filters with size 1 x 1
 
-conv2 = tf.nn.conv2d(conv1, weights['w2'], strides=[1, 1, 1, 1], padding='VALID')
+conv2 = tf.nn.conv2d(conv1, weights['w2'], strides=[1, 1, 1, 1], padding='SAME')
 conv2 = tf.nn.bias_add(conv2, biases['b2'])
 conv2 = tf.nn.relu(conv2)
 ##------ Add your code here: compute the reconstruction of high-resolution image
 # conv3 layer with biases and NO relu: 1 filter with size 5 x 5
-conv3 = tf.nn.conv2d(conv2, weights['w3'], strides=[1, 1, 1, 1], padding='VALID')
+conv3 = tf.nn.conv2d(conv2, weights['w3'], strides=[1, 1, 1, 1], padding='SAME')
 conv3 = tf.nn.bias_add(conv3, biases['b3'])
-
+# conv3 = tf.nn.sigmoid(conv3)
 """Load the pre-trained model file
 """
 model_path='./model/model.npy'
@@ -142,26 +142,26 @@ num_filters_conv3 = len(conv3_b)
 size_filters_conv3 = len(conv3_w)
 
 # To show the value	of the 1st filter
-print('The 1st filter in first convolutional layer is %.2f')
-print(conv1_w[0])
+print('The 1st filter in first convolutional layer is ')
+print(conv1_w[:,:,:,0])
+
 # To show the bias of the 10th filter
 print('The 10th bias in first convolutional layer is ')
 print(conv1_b[9])
 
 # To show the value	of the 5st filter
-print('The 1st filter in first convolutional layer is ')
-print(conv2_w[0])
+print('The 5st filter in second convolutional layer is ')
+print(conv2_w[:,:,:,4])
 # To show the bias of the 6th filter
-print('The 10th bias in first convolutional layer is ')
-print(conv2_b[0])
+print('The 6th bias in second convolutional layer is ')
+print(conv2_b[5])
 
 # To show the value	of the 1st filter
-print('The 1st filter in first convolutional layer is ')
-print(conv2_w[0])
+print('The 1st filter in third convolutional layer is ')
+print(conv3_w[:,:,:,0])
 # To show the bias of the 1th filter
-print('The 10th bias in first convolutional layer is ')
-print(conv2_b[0])
-
+print('The 10th bias in third convolutional layer is ')
+print(conv3_b[0])
 
 """Initialize the model variabiles (w1, w2, w3, b1, b2, b3) with the pre-trained model file
 """
@@ -187,8 +187,8 @@ input_ = np.expand_dims(np.expand_dims(blurred_image, axis =0), axis=-1)
 # here you can also run to get feature map like 'conv1' and 'conv2'
 ouput_ = sess.run(conv3, feed_dict={inputs: input_})
 ouput_ = ouput_.squeeze()
-import cv2
-ouput_ = cv2.resize(ouput_, dsize=(255, 255), interpolation=cv2.INTER_CUBIC)
+# import cv2
+# ouput_ = cv2.resize(ouput_, dsize=(255, 255), interpolation=cv2.INTER_CUBIC)
 
 
 ##------ Add your code here: save the blurred and SR images and compute the psnr
