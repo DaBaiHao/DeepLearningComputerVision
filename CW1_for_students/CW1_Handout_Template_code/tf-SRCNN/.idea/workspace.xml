@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7364461-f035-41ac-ad08-43d485d5bb28" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tf-SRCNN.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tf-SRCNN.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/srcnn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../~$1 Report - template.docx" beforeDir="false" />
-    </list>
+    <list default="true" id="c7364461-f035-41ac-ad08-43d485d5bb28" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/srcnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="200" lean-forward="true" selection-start-line="200" selection-end-line="200" />
+            <state relative-caret-position="508">
+              <caret line="195" column="37" lean-forward="true" selection-start-line="195" selection-start-column="37" selection-end-line="195" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -204,23 +198,22 @@
       <updated>1549207565672</updated>
       <workItem from="1549207568435" duration="16024000" />
       <workItem from="1549236350989" duration="7000" />
-      <workItem from="1549399243867" duration="6877000" />
+      <workItem from="1549399243867" duration="8094000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22908000" />
+    <option name="totallyTimeSpent" value="24125000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="224" y="0" width="1703" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17407182" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33734939" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33734939" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -231,7 +224,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32858709" />
-      <window_info anchor="right" x="0" y="0" width="375" height="847" id="Documentation" side_tool="true" visible="true" weight="0.32988435" />
+      <window_info active="true" anchor="right" x="0" y="0" width="375" height="847" id="Documentation" side_tool="true" visible="true" weight="0.32988435" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -285,8 +278,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/srcnn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="200" lean-forward="true" selection-start-line="200" selection-end-line="200" />
+        <state relative-caret-position="508">
+          <caret line="195" column="37" lean-forward="true" selection-start-line="195" selection-start-column="37" selection-end-line="195" selection-end-column="37" />
         </state>
       </provider>
     </entry>
