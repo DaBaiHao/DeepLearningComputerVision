@@ -97,19 +97,19 @@ biases = {
 # replace 'None' with your layers: use the tf.nn.conv2d() and tf.nn.relu()
 # conv1 layer with biases and relu : 64 filters with size 9 x 9
 
-conv1 = tf.nn.conv2d(inputs, weights['w1'], strides=[1, 1, 1, 1], padding='SAME')
+conv1 = tf.nn.conv2d(inputs, weights['w1'], strides=[1, 1, 1, 1], padding='VALID')
 conv1 = tf.nn.bias_add(conv1, biases['b1'])
 conv1 = tf.nn.relu(conv1)
 
 ##------ Add your code here: to compute non-linear mapping
 # conv2 layer with biases and relu: 32 filters with size 1 x 1
 
-conv2 = tf.nn.conv2d(conv1, weights['w2'], strides=[1, 1, 1, 1], padding='SAME')
+conv2 = tf.nn.conv2d(conv1, weights['w2'], strides=[1, 1, 1, 1], padding='VALID')
 conv2 = tf.nn.bias_add(conv2, biases['b2'])
 conv2 = tf.nn.relu(conv2)
 ##------ Add your code here: compute the reconstruction of high-resolution image
 # conv3 layer with biases and NO relu: 1 filter with size 5 x 5
-conv3 = tf.nn.conv2d(conv2, weights['w3'], strides=[1, 1, 1, 1], padding='SAME')
+conv3 = tf.nn.conv2d(conv2, weights['w3'], strides=[1, 1, 1, 1], padding='VALID')
 conv3 = tf.nn.bias_add(conv3, biases['b3'])
 # conv3 = tf.nn.sigmoid(conv3)
 """Load the pre-trained model file
@@ -185,20 +185,76 @@ input_ = np.expand_dims(np.expand_dims(blurred_image, axis =0), axis=-1)
 
 # run the session
 # here you can also run to get feature map like 'conv1' and 'conv2'
+
 ouput_ = sess.run(conv3, feed_dict={inputs: input_})
+ouput_BICUBIC = tf.image.resize_images(input_,
+                                       (255*3, 255*3),
+                                       method=tf.image.ResizeMethod.BICUBIC)
+ouput_BICUBIC = tf.image.resize_images(input_,
+                                       (255, 255),
+                                       method=tf.image.ResizeMethod.BICUBIC)
+ouput_BICUBIC = sess.run(ouput_BICUBIC)
 ouput_ = ouput_.squeeze()
-# import cv2
+ouput_BICUBIC = ouput_BICUBIC.squeeze()
+import cv2
 # ouput_ = cv2.resize(ouput_, dsize=(255, 255), interpolation=cv2.INTER_CUBIC)
 
-
+# groudtruth_image = cv2.resize(groudtruth_image, dsize=(243, 243), interpolation=cv2.INTER_CUBIC)
 ##------ Add your code here: save the blurred and SR images and compute the psnr
 # hints: use the 'scipy.misc.imsave()'  and ' skimage.meause.compare_psnr()'
+# save the images
 scipy.misc.imsave('blurred_image.jpg', blurred_image)
 scipy.misc.imsave('SR_image.jpg', ouput_)
+scipy.misc.imsave('groudtruth_image.jpg', groudtruth_image)
+scipy.misc.imsave('BICUBIC_image.jpg', ouput_BICUBIC)
 
+# because using the valid  padding the output image size is smaller,
+# so the ground truth image needs to be cutting to same dinmationnal
+# to calculate the psnr value
 import skimage.measure as sk
-psnr_ = sk.compare_psnr(groudtruth_image, ouput_)
+psnr_ = sk.compare_psnr(groudtruth_image[6:249, 6:249], ouput_)
 print(psnr_)
+
+# calculate the BICUBIC function output and ground truth image PSNR
+plt.imshow(groudtruth_image)
+plt.show()
+psnr_ = sk.compare_psnr(groudtruth_image, ouput_BICUBIC)
+print(psnr_)
+
+# this function is to calculate a image after using BICUBIC function resize
+def BICUBIC_image_generate(img_dir):
+    # = 'image/butterfly_GT.bmp'
+    from PIL import Image
+    import matplotlib.pyplot as plt
+
+    image = Image.open(img_dir).convert('LA')
+    plt.imshow(image)
+    plt.show()
+    width, height = image.size
+    # pdb.set_trace() # check point
+
+    image_H = height * 3
+    image_W = width * 3
+
+    def resize_image(image):
+        image = tf.image.resize_images(image,
+                                       (image_H, image_W),
+                                       method=tf.image.ResizeMethod.BICUBIC)
+        return image
+
+    with tf.Session() as sess:
+        # image = Image.open(img_dir)
+        image = resize_image(image)
+        image = sess.run(image)
+        image = image[:, :, 0]
+        plt.imshow(image)
+        plt.show()
+        # scipy.misc.imsave('BICUBIC_image.jpg', image)
+        pdb.set_trace()
+        psnr_ = sk.compare_psnr(groudtruth_image, image)
+        print(psnr_)
+        # print(psnr_)
+        return image
 
 
 
