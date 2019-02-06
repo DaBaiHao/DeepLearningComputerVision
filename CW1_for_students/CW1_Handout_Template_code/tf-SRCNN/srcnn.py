@@ -97,16 +97,20 @@ biases = {
 # replace 'None' with your layers: use the tf.nn.conv2d() and tf.nn.relu()
 # conv1 layer with biases and relu : 64 filters with size 9 x 9
 
-conv1 = tf.nn.relu(tf.nn.conv2d(inputs, weights['w1'], strides=[1, 1, 1, 1], padding='VALID') + biases['b1'])
+conv1 = tf.nn.conv2d(inputs, weights['w1'], strides=[1, 1, 1, 1], padding='VALID')
+conv1 = tf.nn.bias_add(conv1, biases['b1'])
+conv1 = tf.nn.relu(conv1)
 
 ##------ Add your code here: to compute non-linear mapping
 # conv2 layer with biases and relu: 32 filters with size 1 x 1
 
-conv2 = tf.nn.relu(tf.nn.conv2d(conv1, weights['w2'], strides=[1, 1, 1, 1], padding='VALID') + biases['b2'])
+conv2 = tf.nn.conv2d(conv1, weights['w2'], strides=[1, 1, 1, 1], padding='VALID')
+conv2 = tf.nn.bias_add(conv2, biases['b2'])
+conv2 = tf.nn.relu(conv2)
 ##------ Add your code here: compute the reconstruction of high-resolution image
 # conv3 layer with biases and NO relu: 1 filter with size 5 x 5
-conv3 = tf.nn.conv2d(conv2, weights['w3'], strides=[1, 1, 1, 1], padding='VALID') + biases['b3']
-
+conv3 = tf.nn.conv2d(conv2, weights['w3'], strides=[1, 1, 1, 1], padding='VALID')
+conv3 = tf.nn.bias_add(conv3, biases['b3'])
 
 """Load the pre-trained model file
 """
