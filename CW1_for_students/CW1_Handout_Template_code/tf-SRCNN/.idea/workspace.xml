@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7364461-f035-41ac-ad08-43d485d5bb28" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../CW1 Report - template.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 Report - template.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SR_image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/SR_image.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/srcnn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../~$1 Report - template.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../~WRL0005.tmp" beforeDir="false" />
-    </list>
+    <list default="true" id="c7364461-f035-41ac-ad08-43d485d5bb28" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/srcnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="226" column="25" lean-forward="true" selection-start-line="226" selection-start-column="25" selection-end-line="226" selection-end-column="25" />
+            <state relative-caret-position="261">
+              <caret line="112" column="43" lean-forward="true" selection-start-line="112" selection-start-column="43" selection-end-line="112" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -215,23 +208,22 @@
       <workItem from="1549236350989" duration="7000" />
       <workItem from="1549399243867" duration="8094000" />
       <workItem from="1549457035525" duration="326000" />
-      <workItem from="1549457385814" duration="13197000" />
+      <workItem from="1549457385814" duration="13232000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37648000" />
+    <option name="totallyTimeSpent" value="37683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1932" height="1092" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15598291" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33716077" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33716077" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -245,9 +237,9 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" sideWeight="0.4992126" visible="true" weight="0.13194445" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.49895614" visible="true" weight="0.13194445" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" x="0" y="0" width="375" height="847" id="Documentation" order="5" sideWeight="0.5007874" side_tool="true" visible="true" weight="0.13194445" />
+      <window_info anchor="right" x="0" y="0" width="375" height="847" id="Documentation" order="5" sideWeight="0.50104386" side_tool="true" visible="true" weight="0.13194445" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -308,8 +300,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/srcnn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="226" column="25" lean-forward="true" selection-start-line="226" selection-start-column="25" selection-end-line="226" selection-end-column="25" />
+        <state relative-caret-position="261">
+          <caret line="112" column="43" lean-forward="true" selection-start-line="112" selection-start-column="43" selection-end-line="112" selection-end-column="43" />
         </state>
       </provider>
     </entry>
